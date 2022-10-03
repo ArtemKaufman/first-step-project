@@ -53,11 +53,20 @@ ourButtons.forEach(el => {
 })
 
 
+
+
+
 loadMore.addEventListener('click', function () {
-    imgBlock.forEach(el => el.hidden = false)
+    document.querySelector('.middle').classList.remove('display_none');
     loadMore.style.display = 'none';
-    console.log('true');
+    setTimeout(() => {
+        imgBlock.forEach(el => el.hidden = false)
+        document.querySelector('.middle').classList.add('display_none');
+    }, 2000);
+    
 })
+
+
 
 
 let all = document.querySelector('.all')
@@ -136,3 +145,7 @@ new Swiper('.swiper1', {
         }
     }
 })
+// ====================================
+// Animation
+// ====================================
+
